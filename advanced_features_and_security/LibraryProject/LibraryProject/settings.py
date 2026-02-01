@@ -132,7 +132,10 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 AUTH_USER_MODEL = 'bookshelf.CustomUser'
 
-DEBUG = False  
+DEBUG = False
+# Security: Trust X-Forwarded-Proto header for HTTPS detection
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 31536000
